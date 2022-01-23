@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 
 
 const app = express()
-const port = 5000
 
 app.use(cors())
 app.use(express.json())
@@ -35,7 +34,10 @@ app.use((req, res, next) => {
 app.use("/api/auth",require("./routes/auth"))
 app.use("/api/clothes",require("./routes/clothes"))
 
-
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
