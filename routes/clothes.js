@@ -10,35 +10,7 @@ const mongoose = require("mongoose");
 const multer = require('multer');
 const upload=multer({dest:'uploads/'})
 
-// const storage = multer.diskStorage({
-//   destination: function(req, file, cb) {
-//     cb(null, './uploads/');
-//   },
-//   filename: function(req, file, cb) {
-//     cb(null, new Date().toISOString() + file.originalname);
-//   }
-// });
 
-// const fileFilter = (req, file, cb) => {
-//   // reject a file
-//   if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
-//     cb(null, true);
-//   } else {
-//     cb(null, false);
-//   }
-// };
-
-// const upload = multer({
-//   storage: storage,
-//   limits: {
-//     fileSize: 1024 * 1024 * 5
-//   },
-//   fileFilter: fileFilter
-// });
-
-
-// ROUTE 1: Get All the Cloths using: GET "/api/auth/getuser". Login required
-// console.log(ROLE);
 
 router.get('/fetchallclothes', fetchuser, async (req, res) => {
     try {

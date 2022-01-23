@@ -1,7 +1,7 @@
 const req = require("express/lib/request");
 const res = require("express/lib/response");
 let jwt=require("jsonwebtoken");
-const JWT_SECRET="hereismysecret"
+const JWT_SECRET=process.env.JWT_SECRET;
 const userData={};
 
 const fetchuser = (req, res, next) => {
